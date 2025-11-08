@@ -1,7 +1,9 @@
 # btotp
 An authenticator program written in python.\
 Future plans:\
-installation script
+[x] installation script
+## How it works
+btotp takes your TOTP secret base32 strings and encodes them, if you dont know the password (btotp doesn't save your password anywhere) you won't get your codes. 
 # Read before using
 If you want to configure this app, touch **ONLY** the `BasicInformation` section in `config.toml`.\ 
 Do not mess with `presets.toml`, or other sections of `config.toml`. **Do not delete any files and do not change the code**
