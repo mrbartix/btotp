@@ -1,4 +1,4 @@
-# mAuth - Simple TOTP Authenticator
+# btotp - Simple TOTP Authenticator
 # Copyright (C) 2025 mrbartix [bartixalt@gmail.com]
 #
 # This program is free software: you can redistribute it and/or modify
