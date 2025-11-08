@@ -156,6 +156,10 @@ if __name__ == "__main__":
     SecretHandler().addHeading()
     SecretHandler().testEncode(pwd.get())
     regInstance.destroy()
+    wtxt.configure(text=f"Welcome, {usr.get()}")
+    addf = AddField(sFrame, lambda: addFieldwin(root, secretVar, titleVar, lambda reg_instance: addAField(fields, addf, secretVar.get(), titleVar.get(), sFrame, root, iPwd.get(), secrets, reg_instance)))
+    addf.pack()
+    threading.Thread(target=lambda: mainTOTPloop(secrets, fields), daemon=True).start()
   reg = RegisterWindow(root, newPwd, newUsr, lambda: register(newUsr, newPwd, reg))
  else:
   iPwd = ctk.StringVar()
