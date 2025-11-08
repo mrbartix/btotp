@@ -1,0 +1,9 @@
+[BasicInformation]
+accountName = "@acountname@"
+appearance = "system"
+defaultColor = "blue"
+
+[secrets]
+
+[FieldNo]
+title = "@fieldtitle@"

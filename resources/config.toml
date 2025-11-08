@@ -1,0 +1,15 @@
+[BasicInformation]
+accountName = "mrbartix"
+appearance = "system"
+defaultColor = "blue"
+
+[secrets]
+test = "gAAAAABpD23E7KHX2x4rbEUGQ51LWnSmrCMLfcPJqNPepAL0I42yVlLeEtFsr1oSZTdiwPVFfAqapbICnMEYxpcVnqsT9EWE0A=="
+field0 = "gAAAAABpD5tFN2QP6GmYDkZOwr1OAnTq-fc8S3mbKSK_MCCnoysYyfTOZrdv5gtsj13Fgn4rPq1HNWCBCdlp5-3_-V35E9kGC_GYaGopie8ING4ynwL2iPZeWEDQnNMGZ2CqpQscjjZR"
+field1 = "gAAAAABpD525HFF46TlvuAlFjIkwZguoVSPVy8Jz9YsWi_j28oH8Tk_7iXH6K4MSRUYZt11gepe0RJr7sLhULxfU76jqn_ez49XM2yG1CZbg2KTLf8fqulL0xibkzKC16CdcPPwqdI9v"
+
+[Field0]
+title = [ "bobweb",]
+
+[Field1]
+title = [ "1",]
