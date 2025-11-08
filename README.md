@@ -1,4 +1,4 @@
-# mAuth
+# btotp
 An authenticator program written in python.\
 Future plans:\
 installation script
