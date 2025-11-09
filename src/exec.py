@@ -77,7 +77,7 @@ def mainTOTPloop(secrets: dict, dict: dict):
 if __name__ == "__main__":
  root.geometry('430x600')
  root.resizable(False, False)
- root.title("mAuth")
+ root.title("btotp")
  root.wm_iconphoto(True, ImageTk.PhotoImage(file=f"{path}/../resources/icon.png"))
  config = toml.load(configPath)
  wtxt = ctk.CTkLabel(root, text="", font=("Times New Roman", 40), anchor="w")
