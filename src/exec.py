@@ -114,7 +114,7 @@ if __name__ == "__main__":
    addFieldInstance.pack_forget()
    dict[lkey] = AuthField(parent, 
                           lambda lkey=lkey: editField(root, dict[lkey].key, editFieldTxtVar, dict),
-                          lambda lkey=lkey: delField(lkey, dict, secretdict, root), 
+                          lambda lkey=lkey: delField(lkey, dict, secretdict, root, parent), 
                           root, 
                           lkey
                          )
