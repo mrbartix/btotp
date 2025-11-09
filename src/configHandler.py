@@ -39,7 +39,7 @@ class ConfigHandler:
     f.close()
   else:
    raise ConfigError(f"Field{fieldNumber} does not exist. Create it first!")
- def createField(self, fieldNumber : int, *title: str) -> None:
+ def createField(self, fieldNumber : int, title: str) -> None:
   """Creates a field with information about it
   Args:
    fieldNumber (int): What number is the field saved as
@@ -51,8 +51,7 @@ class ConfigHandler:
    raise ConfigError("No BasicInformation, make sure to create it before running fieldCreate()")
   newFieldNo = f'Field{fieldNumber}'
   new = preset.pop("FieldNo")
-  if title:
-   new['title'] = title
+  new['title'] = title
   config[newFieldNo] = new
   with open(self.configPath, "w") as f:
    toml.dump(config, f)
