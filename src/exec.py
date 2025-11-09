@@ -57,7 +57,7 @@ def checkSecret(secret: str) -> bool:
   base64.b32decode(secret, casefold=True)
   _ = pyotp.TOTP(secret)
   return True
- except Exception as e:
+ except Exception:
   return False
 
 def mainTOTPloop(secrets: dict, dict: dict):
