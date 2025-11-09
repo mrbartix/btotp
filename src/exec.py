@@ -44,7 +44,7 @@ def bind(parent, dict: dict):
    parent._parent_canvas.bind_all("<Button-4>", _on_mousewheel)
    parent._parent_canvas.bind_all("<Button-5>", _on_mousewheel)
 
-def unbind(parent,dict:dict):
+def unbind(parent, dict:dict):
  if 2 not in dict:
   if platform.system() in ["Windows", "Darwin"]:
    parent._parent_canvas.unbind_all("<MouseWheel>")
@@ -77,7 +77,7 @@ def mainTOTPloop(secrets: dict, dict: dict):
 if __name__ == "__main__":
  root.geometry('430x600')
  root.resizable(False, False)
- root.title("btotp")
+ root.title("mAuth")
  root.wm_iconphoto(True, ImageTk.PhotoImage(file=f"{path}/../resources/icon.png"))
  config = toml.load(configPath)
  wtxt = ctk.CTkLabel(root, text="", font=("Times New Roman", 40), anchor="w")
@@ -99,11 +99,25 @@ if __name__ == "__main__":
    ins.destroy()
   ins.yes.configure(command=save_and_destroy)
 
- def addAField(dict: dict, addFieldInstance: any, secret: str, title: str, parent: any, root: any, password: str, secretdict: dict, reg_instance):
+ def addAField(dict: dict, 
+               addFieldInstance: any, 
+               secret: str, 
+               title: str, 
+               parent: any, 
+               root: any, 
+               password: str, 
+               secretdict: dict, 
+               regInstance: any
+              ):
   if checkSecret(secret):
    lkey = next(i for i in itertools.count(0) if i not in dict)
    addFieldInstance.pack_forget()
-   dict[lkey] = AuthField(parent, lambda lkey=lkey: editField(root, dict[lkey].key, editFieldTxtVar, dict), lambda lkey=lkey: delField(lkey, dict, secretdict, root), root, lkey)
+   dict[lkey] = AuthField(parent, 
+                          lambda lkey=lkey: editField(root, dict[lkey].key, editFieldTxtVar, dict),
+                          lambda lkey=lkey: delField(lkey, dict, secretdict, root), 
+                          root, 
+                          lkey
+                         )
    dict[lkey].codelabel.configure(text=title)
    SecretHandler().secretRegister(password, secret, lkey)
    ConfigHandler().createField(lkey, title)
@@ -111,14 +125,14 @@ if __name__ == "__main__":
    dict[lkey].pack()
    addFieldInstance.pack()
    bind(parent,dict)
-   reg_instance.destroy()
+   regInstance.destroy()
   else:
-   reg_instance.output.configure(text="invalid TOTP secret!")
+   regInstance.output.configure(text="invalid TOTP secret!")
 
  def addFieldwin(parent, secretVar, titleVar, addCmd):
-  reg_instance = RegisterTOTPWindow(parent, secretVar, titleVar, None)
-  reg_instance.submit.configure(command=lambda: addCmd(reg_instance))
-  return reg_instance
+  regInstance = RegisterTOTPWindow(parent, secretVar, titleVar, None)
+  regInstance.submit.configure(command=lambda: addCmd(regInstance))
+  return regInstance
 
  def loadFields(dict: dict, parent, root, password: str, secretdict: dict):
   nums = [int(m.group(1)) for k in config if (m := re.match(r"^Field(\d+)$", k))]
@@ -130,7 +144,12 @@ if __name__ == "__main__":
      title = config[f"Field{i}"]['title']
      if f"field{i}" in config['secrets']:
       secret = SecretHandler().secretGet(password,i)
-    dict[i] = AuthField(parent, lambda i=i: editField(root, dict[i].key, editFieldTxtVar, dict), lambda i=i: delField(i, dict, secretdict, root, parent), root, i)
+    dict[i] = AuthField(parent, 
+                        lambda i=i: editField(root, dict[i].key, editFieldTxtVar, dict), 
+                        lambda i=i: delField(i, dict, secretdict, root, parent), 
+                        root, 
+                        i
+                       )
     dict[i].codelabel.configure(text=title)
     secretdict[i] = secret
     dict[i].pack()
@@ -157,7 +176,7 @@ if __name__ == "__main__":
     SecretHandler().testEncode(pwd.get())
     regInstance.destroy()
     wtxt.configure(text=f"Welcome, {usr.get()}")
-    addf = AddField(sFrame, lambda: addFieldwin(root, secretVar, titleVar, lambda reg_instance: addAField(fields, addf, secretVar.get(), titleVar.get(), sFrame, root, newPwd.get(), secrets, reg_instance)))
+    addf = AddField(sFrame, lambda: addFieldwin(root, secretVar, titleVar, lambda regInstance: addAField(fields, addf, secretVar.get(), titleVar.get(), sFrame, root, newPwd.get(), secrets, regInstance)))
     addf.pack()
     threading.Thread(target=lambda: mainTOTPloop(secrets, fields), daemon=True).start()
   reg = RegisterWindow(root, newPwd, newUsr, lambda: register(newUsr, newPwd, reg))
@@ -176,7 +195,7 @@ if __name__ == "__main__":
      loginInstance.destroy()
      wtxt.configure(text=f"Welcome, {config['BasicInformation']['accountName']}")
      loadFields(fields, sFrame, root, iPwd.get(), secrets)
-     addf = AddField(sFrame, lambda: addFieldwin(root, secretVar, titleVar, lambda reg_instance: addAField(fields, addf, secretVar.get(), titleVar.get(), sFrame, root, iPwd.get(), secrets, reg_instance)))
+     addf = AddField(sFrame, lambda: addFieldwin(root, secretVar, titleVar, lambda regInstance: addAField(fields, addf, secretVar.get(), titleVar.get(), sFrame, root, iPwd.get(), secrets, regInstance)))
      addf.pack()
      threading.Thread(target=lambda: mainTOTPloop(secrets, fields), daemon=True).start()
    else:
