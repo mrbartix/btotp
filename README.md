@@ -1,3 +1,4 @@
+
 # btotp
 An authenticator program written in python.\
 Future plans:\
@@ -14,20 +15,44 @@ accountName = "mrbartix" #your username, you can change it here
 appearance = "system" # theme of the window, valid options: black, white or system
 defaultColor = "blue" # default color of widgets, valid options: green, blue, dark-blue
 ```
+# Dependencies
+Before installation make sure that you have **Tcl**, **Tk** and the **Times New Roman** font installed.
+**Debian based:**
+```bash
+sudo apt install python3-tk python3-venv tk tcl ttf-mscorefonts-installer
+```
+**Arch based (Pacman)**
+```bash
+sudo pacman -Syu tk tcl
+yay -S ttf-ms-fonts
+```
+(you can also use paru or pamac instead of yay **(use your favourite AUR helper)**)\
+**Fedora**
+```bash
+sudo dnf install python3-tkinter tk tcl curl cabextract xorg-x11-font-utils fontconfig msttcore-fonts-installer
+```
+**Windows**
+When installing python check the **"Use admin privileges when installing py.exe"** and **"Add python.exe to PATH"** options. After that select **"Customize installation"**. Make sure that all boxes on **"Optional Features"** are checked. Press **"Next"**. Make sure that all boxes are checked here too. Press Install.
+**macOS**
+```bash
+brew install python-tk tcl-tk fontconfig
+# you also may need to link tcl/tk
+brew link tcl-tk --force
+```
 # Installation
 First, download the source code, using `git clone https://github.com/mrbartix/btotp.git`
 1. Open the terminal/cmd
-2. Make sure that you have python installed. Install it if you don't have it.
+2. Make sure that you have python and the dependencies installed. Install it if you don't have it.
 3. Navigate to the directory which the unzipped source code is (using the terminal)
 4. Inside the main directory run: 
 
 **Linux or Mac:**
 ```bash
-python -m venv venv
+python3 -m venv venv
 source venv/bin/activate
 pip install -r requirements.txt
 cd src
-python exec.py
+python3 exec.py
 ```
 **Windows:**
 ```bash
