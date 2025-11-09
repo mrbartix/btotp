@@ -40,7 +40,7 @@ brew install python-tk tcl-tk fontconfig
 brew link tcl-tk --force
 ```
 # Installation
-First, download the source code, using `git clone https://github.com/mrbartix/btotp.git`
+First, download the source code, using `git clone https://github.com/mrbartix/btotp.git` (recommended option, you need to install [git]([url](https://git-scm.com/)))
 1. Open the terminal/cmd
 2. Make sure that you have python and the dependencies installed. Install it if you don't have it.
 3. Navigate to the directory which the unzipped source code is (using the terminal)
