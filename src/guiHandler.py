@@ -64,7 +64,7 @@ class AuthField(ctk.CTkFrame):
   self.delete = ctk.CTkButton(self, command=deletecmd, text="🗑", font=("Times New Roman", 30), width=40, height=30, fg_color="red")
   self.delete.place(x=360, y=102)
 
-  self.copy = ctk.CTkButton(self, command=lambda: [root.clipboard_clear(), root.clipboard_append(str(self.code.get()))], text="📄", font=("Times New Roman", 30), width=40, height=30, fg_color="green")
+  self.copy = ctk.CTkButton(self, command=lambda: [root.clipboard_clear(), root.clipboard_append(str(self.code.get()))], text="⎘", font=("Times New Roman", 28), width=40, height=30, fg_color="green")
   self.copy.place(x=360, y=50)
 
   self.timeUptd()
