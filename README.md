@@ -31,7 +31,7 @@ yay -S ttf-ms-fonts
 ```bash
 sudo dnf install python3-tkinter tk tcl curl cabextract xorg-x11-font-utils fontconfig mscore-fonts
 ```
-**Windows**
+**Windows**\
 When installing python check the **"Use admin privileges when installing py.exe"** and **"Add python.exe to PATH"** options. After that select **"Customize installation"**. Make sure that all boxes on **"Optional Features"** are checked. Press **"Next"**. Make sure that all boxes are checked here too. Press Install.
 **macOS**
 ```bash
@@ -40,12 +40,10 @@ brew install python-tk tcl-tk fontconfig
 brew link tcl-tk --force
 ```
 # Installation
-First, download the source code, using `git clone https://github.com/mrbartix/btotp.git` (recommended option, you need to install [git](https://git-scm.com/))
 1. Open the terminal/cmd
-2. Make sure that you have **python and the dependencies installed**. Install it if you don't have it.
-3. Navigate to the directory which the unzipped source code is (using the terminal)
-4. Inside the main directory run: 
-
+2. Make sure that you have **python, [git](https://git-scm.com/)) and the dependencies installed**. Install it if you don't have it.
+3. Run:
+`git clone https://github.com/mrbartix/btotp.git` 
 **Linux or Mac:**
 ```bash
 python3 -m venv venv
