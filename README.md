@@ -43,7 +43,10 @@ brew link tcl-tk --force
 1. Open the terminal/cmd
 2. Make sure that you have **python, [git](https://git-scm.com/)) and the dependencies installed**. Install it if you don't have it.
 3. Run:
-`git clone https://github.com/mrbartix/btotp.git` 
+```bash
+git clone https://github.com/mrbartix/btotp.git
+cd btotp
+```
 **Linux or Mac:**
 ```bash
 python3 -m venv venv
