@@ -32,7 +32,7 @@ yay -S ttf-ms-fonts
 sudo dnf install python3-tkinter tk tcl curl cabextract xorg-x11-font-utils fontconfig mscore-fonts
 ```
 **Windows**\
-When installing python check the **"Use admin privileges when installing py.exe"** and **"Add python.exe to PATH"** options. After that select **"Customize installation"**. Make sure that all boxes on **"Optional Features"** are checked. Press **"Next"**. Make sure that all boxes are checked here too. Press Install.
+When installing python check the **"Use admin privileges when installing py.exe"** and **"Add python.exe to PATH"** options. After that select **"Customize installation"**. Make sure that all boxes on **"Optional Features"** are checked. Press **"Next"**. Make sure that all boxes are checked here too. Press Install.\
 **macOS**
 ```bash
 brew install python-tk tcl-tk fontconfig
