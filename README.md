@@ -16,7 +16,7 @@ appearance = "system" # theme of the window, valid options: black, white or syst
 defaultColor = "blue" # default color of widgets, valid options: green, blue, dark-blue
 ```
 # Dependencies
-Before installation make sure that you have **Tcl**, **Tk** and the **Times New Roman** font installed.
+Before installation make sure that you have **Tcl**, **Tk** and the **Times New Roman** font installed.\
 **Debian based:**
 ```bash
 sudo apt install python3-tk python3-venv tk tcl ttf-mscorefonts-installer
