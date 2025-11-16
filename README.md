@@ -15,6 +15,8 @@ accountName = "mrbartix" #your username, you can change it here
 appearance = "system" # theme of the window, valid options: black, white or system
 defaultColor = "blue" # default color of widgets, valid options: green, blue, dark-blue
 ```
+## Importing your config
+If you want to import your old config.toml (eg. from an old device), just delete the `config.toml` file that you don't want to use and move in your imported `config.toml` file, do not change the name of the config you want to use.
 # Installation
 To install this program, first check if you have python installed (you have to have python)\
 **If you are on windows, make sure that you installed python correctly (tcl and tk have to be installed, also would be nice if python was installed globally and added to PATH).**\
