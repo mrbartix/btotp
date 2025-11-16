@@ -15,8 +15,9 @@
 # along with this program.  If not, see <https://www.gnu.org/licenses/>.
 from configHandler import CriticalConfigError, ConfigHandler, SecretHandler
 from guiHandler import AuthField, EditPopUp, YesNoPopUpWindow, AddField, RegisterTOTPWindow, RegisterWindow, LoginPopUp
-from PIL import ImageTk
-import toml, customtkinter as ctk, threading, os, pyotp, itertools, re, platform, base64, time
+import toml, customtkinter as ctk, threading, os, pyotp, itertools, re, platform, base64, time, platform
+if platform.system() != "Windows":
+ from PIL import ImageTk
 
 root = ctk.CTk()
 path = os.path.dirname(os.path.abspath(__file__))
@@ -77,8 +78,11 @@ def mainTOTPloop(secrets: dict, dict: dict):
 if __name__ == "__main__":
  root.geometry('430x600')
  root.resizable(False, False)
- root.title("mAuth")
- root.wm_iconphoto(True, ImageTk.PhotoImage(file=f"{path}/../resources/icon.png"))
+ root.title("btotp")
+ if platform.system() == "Windows":
+  root.wm_iconphoto(True, f"{path}/../resources/icon.png")
+ else:
+  root.wm_iconphoto(True, ImageTk.PhotoImage(file=f"{path}/../resources/icon.png"))
  config = toml.load(configPath)
  wtxt = ctk.CTkLabel(root, text="", font=("Times New Roman", 40), anchor="w")
  wtxt.pack(pady=10)
