@@ -23,8 +23,9 @@ When you are sure that you have installed python then you can head over to relea
  - Arch based Linux distros
  - Debian based Linux distros
  - Fedora (red hat) based Linux distros
- 
- Run the script with `python path_to_the_script`. If you are on Windows, and installed python without adding it to path, replace `python` with the path to `python.exe` 
+Run the script with `python path_to_the_script`. If you are on Windows, and installed python without adding it to path, replace `python` with the path to `python.exe`\
+On windows the shortcut creation script may have an error leaving you hanging on CMD, just do `CTRL+C`. The error should not be fatal and the shortcuts should still work.
+
 # Manual installation
 If you don't trust the installation scripts (or your system is not supported) you can install manually.
 ## Dependencies
