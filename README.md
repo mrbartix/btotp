@@ -1,10 +1,10 @@
 
+
 # btotp
 An authenticator program written in python.\
 Future plans:\
-[x] installation script
 ## How it works
-btotp takes your TOTP secret base32 strings and encodes them, if you dont know the password (btotp doesn't save your password anywhere) you won't get your codes. 
+btotp takes your TOTP secret base32 strings and encodes them, if you don't know the password (btotp doesn't save your password anywhere) you won't get your codes. 
 # Read before using
 If you want to configure this app, touch **ONLY** the `BasicInformation` section in `config.toml`.\ 
 Do not mess with `presets.toml`, or other sections of `config.toml`. **Do not delete any files and do not change the code**
@@ -15,7 +15,19 @@ accountName = "mrbartix" #your username, you can change it here
 appearance = "system" # theme of the window, valid options: black, white or system
 defaultColor = "blue" # default color of widgets, valid options: green, blue, dark-blue
 ```
-# Dependencies
+# Installation
+To install this program, first check if you have python installed (you have to have python)\
+**If you are on windows, make sure that you installed python correctly (tcl and tk have to be installed, also would be nice if python was installed globally and added to PATH).**\
+When you are sure that you have installed python then you can head over to releases and get the correct installation script. btotp installer supports:
+ - Windows
+ - Arch based Linux distros
+ - Debian based Linux distros
+ - Fedora (red hat) based Linux distros
+ 
+ Run the script with `python path_to_the_script`. If you are on Windows, and installed python without adding it to path, replace `python` with the path to `python.exe` 
+# Manual installation
+If you don't trust the installation scripts (or your system is not supported) you can install manually.
+## Dependencies
 Before installation make sure that you have **Tcl**, **Tk** and the **Times New Roman** font installed.\
 **Debian based:**
 ```bash
@@ -39,7 +51,7 @@ brew install python-tk tcl-tk fontconfig
 # you also may need to link tcl/tk
 brew link tcl-tk --force
 ```
-# Installation
+## Installation
 1. Open the terminal/cmd
 2. Make sure that you have **python, [git](https://git-scm.com/)) and the dependencies installed**. Install it if you don't have it.
 3. Run:
