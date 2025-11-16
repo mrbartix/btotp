@@ -24,6 +24,7 @@ def download(): # Downloads the repository as a zip archive, which skips the nee
   z.extractall(default_download_dir)
  print(f"[3/3] Removing {temp_dir}")
  os.remove(temp_dir)
+ os.remove(fr"{default_download_dir}\btotp-main\setups")
  print("Download done")
 
 def setup_venv(): # sets up the venv, and installs pip dependencies.
