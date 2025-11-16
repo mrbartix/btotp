@@ -79,7 +79,7 @@ if __name__ == "__main__":
  root.resizable(False, False)
  root.title("btotp")
  if platform.system() == "Windows":
-  root.wm_iconphoto(True, f"{path}/../resources/icon.png")
+  root.iconbitmap(True, fr"{path}\..\resources\icon.ico")
  else:
   root.wm_iconphoto(True, ImageTk.PhotoImage(file=f"{path}/../resources/icon.png"))
  config = toml.load(configPath)
