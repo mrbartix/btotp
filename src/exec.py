@@ -16,8 +16,7 @@
 from configHandler import CriticalConfigError, ConfigHandler, SecretHandler
 from guiHandler import AuthField, EditPopUp, YesNoPopUpWindow, AddField, RegisterTOTPWindow, RegisterWindow, LoginPopUp
 import toml, customtkinter as ctk, threading, os, pyotp, itertools, re, platform, base64, time, platform
-if platform.system() != "Windows":
- from PIL import ImageTk
+from PIL import ImageTk
 
 root = ctk.CTk()
 path = os.path.dirname(os.path.abspath(__file__))
